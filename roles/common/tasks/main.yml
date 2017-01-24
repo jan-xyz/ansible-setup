@@ -27,6 +27,6 @@
         user: ansible
         key: "{{item}}"
       with_file:
-        - /Users/jan/.ssh/id_rsa_ansible.pub
+        - "{{ ansiblepublickey }}"
       become_user: ansible
       become: true
