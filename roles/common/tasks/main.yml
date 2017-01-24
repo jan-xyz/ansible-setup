@@ -1,0 +1,32 @@
+---
+    - name: Make sure we have an 'ansible' group
+      group:
+        name: ansible
+        state: present
+
+    - name: Allow 'ansible' group to have passwordless sudo
+      lineinfile:
+        dest: /etc/sudoers
+        state: present
+        regexp: '^%ansible'
+        line: '%ansible ALL=(ALL) NOPASSWD: ALL'
+        validate: 'visudo -cf %s'
+      become: true
+
+    - name: Add sudoers users to ansible group
+      user:
+        name: ansible
+        groups: ansible
+        append: yes
+        state: present
+        createhome: no
+      become: true
+
+    - name: Set up authorized keys for the ansible user
+      authorized_key:
+        user: ansible
+        key: "{{item}}"
+      with_file:
+        - /Users/jan/.ssh/id_rsa_ansible.pub
+      become_user: ansible
+      become: true
