@@ -13,5 +13,7 @@ update it to allow ansible provisioning.
 ansiblepublickey = path to the ansible public key you want to use
 
 ```
-ansible-playbook site.yml --ask-pass --ask-become-pass -u clark-kent --extra-vars ansiblepublickey=/Users/clark-kent/.ssh/id_rsa_ansible.pub
+ansible-playbook site.yml -i inventory.file --ask-pass --ask-become-pass -u clark-kent --extra-vars ansiblepublickey=/Users/clark-kent/.ssh/id_rsa_ansible.pub
 ```
+
+If you want to run it against a single host, just use `-i host-with-comma-in-the-end,` and ansible will run just against this host.
