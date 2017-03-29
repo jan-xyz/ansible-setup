@@ -19,7 +19,7 @@
         groups: ansible
         append: yes
         state: present
-        createhome: no
+        createhome: yes
       become: true
 
     - name: Set up authorized keys for the ansible user
