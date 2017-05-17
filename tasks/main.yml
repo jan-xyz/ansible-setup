@@ -28,5 +28,4 @@
         key: "{{item}}"
       with_file:
         - "{{ ansiblepublickey }}"
-      become_user: ansible
       become: true
