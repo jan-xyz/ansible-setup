@@ -1,5 +1,4 @@
-# Usage
-
+[![Build Status](https://travis-ci.org/jan-xyz/ansible-setup.svg?branch=master)](https://travis-ci.org/jan-xyz/ansible-setup)
 
 
 ansible-setup
