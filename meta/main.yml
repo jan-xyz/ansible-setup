@@ -1,6 +1,6 @@
 galaxy_info:
   author: jan steinke
-  description: software engineer
+  description: A role to setup Ansible on a machine.
 
   license: BSD
 
