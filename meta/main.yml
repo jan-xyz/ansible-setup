@@ -1,0 +1,22 @@
+galaxy_info:
+  author: jan steinke
+  description: software engineer
+
+  license: BSD
+
+  min_ansible_version: 2.3
+
+  platforms:
+  - name: Fedora
+    versions:
+    - all
+  - name: Debian
+    versions:
+    - all
+
+  galaxy_tags:
+    - init
+    - start
+    - setup
+
+dependencies: []
